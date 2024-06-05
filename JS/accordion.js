@@ -1,3 +1,5 @@
+//JS file to toggle the titles and see the content
+console.log('accordion init')
 const accordion = {
 
     init : function(){
@@ -10,19 +12,17 @@ const accordion = {
 
     handleClickTitles: function (event) {
         const clickedTitle = event.currentTarget; // Get the clicked title element
-        console.log(clickedTitle);
+        // console.log(clickedTitle);
       
         clickedTitle.classList.toggle('open'); // Toggle class for the title
       
         const nextSibling = clickedTitle.firstElementChild; 
         
-        console.log(nextSibling);// Get the element directly following the title, here the penguin emoji
+        // console.log(nextSibling);// Get the element directly following the title, here the penguin emoji
         if (nextSibling && nextSibling.classList.contains('penguin')) {
           nextSibling.classList.toggle('penguin--open'); // Toggle class for the next penguin element
         }
       },
-
-
 }
 
 document.addEventListener('DOMContentLoaded', accordion.init);
